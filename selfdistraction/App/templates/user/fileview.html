@@ -1,0 +1,53 @@
+{% extends "common/user.html" %}
+{% block body1 %}
+<div class="h1 text-primary">File</div>
+<div class="row overflow-auto p-3 m-2">
+<div class="col-lg-12">                
+    <!-- Button trigger modal -->
+
+    <a href="/upload" class="btn btn-primary">Back</a>
+    <table class="table table-light table-striped shadow-lg mt-3" style="text-transform:capitalize">
+        <tr>
+            <th>File</th>
+            <td>{{i.filename}}</td>
+        </tr>
+        <tr>
+            <th>Create</th>
+            <td>{{i.create_on | date:'Y-m-d'}}</td>
+        </tr>
+        <tr>
+            <th>Last Seen</th>
+            <td>{{i.modify_on | date:'Y-m-d'}}</td>
+        </tr>
+        <tr>
+            <th>Expriy</th>
+            <td>{{i.expriey_on | date:'Y-m-d'}}</td>
+        </tr>
+        </tr>
+        <tr>
+            <th>Download</th>
+            <td>
+                {% if i.status == "Activate" %}
+                    <a href="{{ i.file.url }}" class="btn btn-primary" download>Download</a>
+                {% else %}
+                    <span>File was Expriy</span>
+                    <a href="#" class="btn btn-primary">Request</a>
+                {% endif %}
+
+            </td>
+        </tr>
+        <tr>
+            <th>Delete</th>
+            <td>
+                <a href="/filedelete/{{i.id}}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+
+    </table>
+</div>
+</div>
+<!-- ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "common/home.html" %}
+{% block body %}
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-5 ms-5 mt-5 p-5 shadow-lg bg-dark rounded">
+        <form action="registersave" method="post">{% csrf_token %}
+            <div class="text-center h3 text-light">Register</div>
+            <div class="input-group mt-4">
+                <label for="username" class="input-group-text ">Username</label>
+                <input type="text" name="username" class="form-control " placeholder="Username" id="">
+            </div>
+            <div class="input-group mt-4">
+                <label for="mobile" class="input-group-text ">Mobile</label>
+                <input type="text" name="mobile" class="form-control " placeholder="Mobile" id="">
+            </div>
+            <div class="input-group mt-4">
+                <label for="email" class="input-group-text ">Email</label>
+                <input type="text" name="email" class="form-control " placeholder="Email" id="">
+            </div>
+            <div class="input-group mt-4">
+                <label for="password" class="input-group-text ">Password</label>
+                <input type="text" name="password" class="form-control " placeholder="Password" id="">
+            </div>
+            <div class="input-group mt-4">
+                <label for="cpassword" class="input-group-text ">Confirm Password</label>
+                <input type="text" name="cpassword" class="form-control " placeholder="Confirm Password" id="">
+            </div>
+            <div class=" mt-4">
+                <input type="submit" class="form-control btn btn-primary" >
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

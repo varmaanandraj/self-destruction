@@ -1,0 +1,30 @@
+{% extends "common/admin.html" %}
+{% block body1 %}
+<div class="h1 text-primary">File</div>
+<div class="row overflow-auto p-3 m-2">
+    <div class="col-lg-12">
+        <table class="table table-light table-striped shadow-lg mt-3" style="text-transform:capitalize">
+            <tr>
+                <th>Name</th>
+                <th>File Name</th>
+                <th>File</th>
+                <th>Create</th>
+                <th>Last Seen</th>
+                <th>Expriy</th>
+                <th>Status</th>
+            </tr>
+            {% for i in obj %}
+            <tr >
+                <td>{{i.user.username}}</td>
+                <td>{{i.file}}</td>
+                <td>{{i.filename}}</td>
+                <td>{{i.create_on}}</td>
+                <td>{{i.modify_on}}</td>
+                <td>{{i.expriey_on}}</td>
+                <td>{{i.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

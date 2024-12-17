@@ -1,0 +1,26 @@
+{% extends "common/home.html" %}
+{% block body %}
+{% include "common/messages.html" %}
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 mt-5 p-5 shadow-lg bg-dark rounded">
+        <form action="logincheck" method="post">{% csrf_token %}
+            <div class="text-center h3 text-light">Login</div>
+            <div class="input-group mt-4">
+                <label for="username" class="input-group-text ">Username</label>
+                <input type="text" name="username" class="form-control " placeholder="Username" id="">
+            </div>
+            <div class="input-group mt-4">
+                <label for="password" class="input-group-text ">Password</label>
+                <input type="text" name="password" class="form-control " placeholder="Password" id="">
+            </div>
+            <div class=" mt-4">
+                <input type="submit" class="form-control btn btn-primary" >
+            </div>
+            <div class="text-center mt-4">
+                <a href="/register" class="text-light ">New? Please Register Here!!!</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

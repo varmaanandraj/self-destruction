@@ -1,0 +1,35 @@
+{% extends "common/home.html" %}
+{% block body %}
+{% include "common/messages.html" %}
+<style>
+    a:hover{
+        text-shadow: 5px 5px 5px black;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-2" style="height:88vh">
+        <table class="table table-striped">
+            <tr>
+                <th><a class="nav-link p-3" href="#">Profile</a></th>
+            </tr>
+            <tr>
+                <th><a class="nav-link p-3" href="/upload">Upload</a></th>
+            </tr>
+            <tr>
+                <th><a class="nav-link p-3" href="/status">Status</a></th>
+            </tr>
+            <tr>
+                <th><a class="nav-link p-3" href="/bin">Bin</a></th>
+            </tr>
+            <tr>
+                <th><a class="nav-link p-3" href="/logout">Logout</a></th>
+            </tr>
+            
+        </table>
+    </div>
+    <div class="col-lg-10">
+        {% block body1 %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
